@@ -95,4 +95,25 @@ wget http://maps.elie.ucl.ac.be/CCI/viewer/download/ESACCI-LC-QuickUserGuide-LS-
 
 ### Vegetation greenness
 ### Snow occurrence
+
+The snow product presents the frequency at which snow has been detected along the year, based on observations over the 2000-2012 period. Data originate from the MODIS/Terra Snow Cover 8d L3 Global 500m SIN Grid Product (MOD10A2).
+
+This seasonality product is composed of two series of 52 layers (1 per week):
+
+AggOcc proportion of snow occurrence as detected over the 2000-2012 period on a 7-day basis (ranging from 0 to 100). This describes the yearly reference dynamics of the snow coverage at a 7-day frequency,
+NYearObs number of valid and cloud-free weekly composites contributing to each 7-day period of the AggOcc series. This is a quality indicator of the occurrence values.
+Each layer has a spatial resolution of 500m and a LAT/LONG WGS84 projection.
+Snow (netcdf, 7z) - 7.8Go
+```sh
+wget --continue ftp://geo10.elie.ucl.ac.be/CCI/ESACCI-LC-L4-Snow-Cond-500m-P13Y7D-2000-2012-v2.0.nc.7z
+cd $WORKDIR
+7z x $GISDATA/sensores/CCI-CRDP/ESACCI-LC-L4-Snow-Cond-500m-P13Y7D-2000-2012-v2.0.nc.7z
+gdalinfo snow-nc/ESACCI-LC-L4-Snow-Cond-500m-P13Y7D-20000716-v2.0.nc
+export BAND=snow_occ
+export WEEK=20000716
+gdalwarp -of Gtiff -co COMPRESS=LZW -co TILED=YES -ot Byte -te -180.0000000 -90.0000000 180.0000000 90.0000000  -t_srs EPSG:4326 NETCDF:snow-nc/ESACCI-LC-L4-Snow-Cond-500m-P13Y7D-${WEEK}-v2.0.nc:${BAND} Snow-Cond-${WEEK}-${BAND}.tif
+
+```
+
+
 ### Burned areas occurrence
