@@ -1,4 +1,4 @@
-export WORKDIR=$HOME/tmp/GIS
+export WORKDIR=$HOME/tmp/alpine
 export GISDB=/opt/gisdb
 export LOCATION=earth
 export MAPSET=IndicativeMaps
