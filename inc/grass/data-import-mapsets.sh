@@ -21,8 +21,9 @@ done
 
 ## january-february files have big gaps on high northern latitudes (mostly above 70° but only on continental areas, not greenland)
 
-r.mapcalc expression="tmp00=0"
+r.mapcalc --overwrite expression="tmp00=0"
 for WEEK in $(ls snow-nc/ | cut -d"-" -f 8)
 do
-   r.mapcalc expression="tmp00=tmp00+('Snow-Cond-${WEEK}-${BAND}')*7/100"
+   r.mapcalc --overwrite expression="tmp01=(if('Snow-Cond-${WEEK}-${BAND}'>-1 & 'Snow-Cond-${WEEK}-${BAND}'<101,'Snow-Cond-${WEEK}-${BAND}',0))"
+   r.mapcalc --overwrite expression="tmp00=tmp00+tmp01"
 done
