@@ -1,0 +1,5 @@
+##https://link.springer.com/article/10.1007/s00035-011-0094-4#annotations:pW5fvgD_EeqznZut79o6Bw
+## The transition from potentially forested to treeless terrain is co-defined by an empirically determined minimum duration of the growing season of 94 days and a mean growing season temperature of 6.4°C. Where trees or any other vegetation is naturally absent e.g. due to lack of moisture, this line is still used as an isotherm that separates terrain above and below (hence, there may be alpine deserts and montane deserts). The growing season is defined from smoothed perennial time series in WorldClim by the first transition of the daily mean of air temperatures per 2.5′ grid through 0.9°C, and its fall below 0.9°C at the end. These numbers have been obtained from iterative searches for best parameterization of the model across several hundred reference points across the globe, improving the criteria as originally presented by Körner and Paulsen 2004.
+
+#!R --vanilla
+setwd(Sys.getenv("WORKDIR"))
