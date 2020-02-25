@@ -104,6 +104,7 @@ AggOcc proportion of snow occurrence as detected over the 2000-2012 period on a 
 NYearObs number of valid and cloud-free weekly composites contributing to each 7-day period of the AggOcc series. This is a quality indicator of the occurrence values.
 Each layer has a spatial resolution of 500m and a LAT/LONG WGS84 projection.
 Snow (netcdf, 7z) - 7.8Go
+
 ```sh
 wget --continue ftp://geo10.elie.ucl.ac.be/CCI/ESACCI-LC-L4-Snow-Cond-500m-P13Y7D-2000-2012-v2.0.nc.7z
 cd $WORKDIR
