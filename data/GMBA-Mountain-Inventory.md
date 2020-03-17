@@ -46,6 +46,7 @@ unzip $GISDATA/biogeografia/GMBA-mountain-inventory/'GMBA mountain definition_V1
 ## change to integer (only six distinct values) and fix limits
 
 gdalwarp ${WORKDIR}/'GMBA mountain definition_V1.1/GMBA climatic belts_V1.1.tif' -ot Int16 -te -180 -60 180 90 GMBA_climatic_belts_V1.1.tif
+gdalwarp ${WORKDIR}/'GMBA mountain definition_V1.1/GMBA mountain definition_V1.1.tif' -ot Int16 -te -180 -60 180 90 GMBA_mountain_definition_V1.1.tif
 
 
 ```
